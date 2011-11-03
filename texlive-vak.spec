@@ -1,0 +1,66 @@
+# revision 23431
+# category Package
+# catalog-ctan /biblio/bibtex/contrib/vak
+# catalog-date 2011-07-04 16:33:07 +0200
+# catalog-license lppl
+# catalog-version undef
+Name:		texlive-vak
+Version:	20110704
+Release:	1
+Summary:	BibTeX style for Russian Theses, books, etc
+Group:		Publishing
+URL:		http://www.ctan.org/tex-archive/biblio/bibtex/contrib/vak
+License:	LPPL
+Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/vak.tar.xz
+Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/vak.doc.tar.xz
+BuildArch:	noarch
+BuildRequires:	texlive-tlpkg
+Requires(post):	texlive-tlpkg
+Conflicts:	texlive-texmf <= 20110705-3
+Conflicts:	texlive-doc <= 20110705-3
+
+%description
+The file can be used to format the bibliographies of PhD
+theses, books etc., according to the latest Russian standards:
+GOST 7.82 - 2001 and GOST 7.1 - 2003. It introduces the minimum
+number of new entries and styles to cover all frequently used
+situations. The style file provides an easy way to perform a
+semiautomatic, or a completely manual sort of the list of the
+references. Processing bibliographies produced by the style
+requires a 8-bit BibTeX system.
+
+%pre
+    %_texmf_mktexlsr_pre
+
+%post
+    %_texmf_mktexlsr_post
+
+%preun
+    if [ $1 -eq 0 ]; then
+	%_texmf_mktexlsr_pre
+    fi
+
+%postun
+    if [ $1 -eq 0 ]; then
+	%_texmf_mktexlsr_post
+    fi
+
+#-----------------------------------------------------------------------
+%files
+%{_texmfdistdir}/bibtex/bst/vak/vak.bst
+%doc %{_texmfdistdir}/doc/bibtex/vak/README
+%doc %{_texmfdistdir}/doc/bibtex/vak/test-key.zip
+%doc %{_texmfdistdir}/doc/bibtex/vak/test.zip
+%doc %{_tlpkgobjdir}/*.tlpobj
+
+#-----------------------------------------------------------------------
+%prep
+%setup -c -a0 -a1
+
+%build
+
+%install
+mkdir -p %{buildroot}%{_texmfdistdir}
+cp -fpar bibtex doc %{buildroot}%{_texmfdistdir}
+mkdir -p %{buildroot}%{_tlpkgobjdir}
+cp -fpa tlpkg/tlpobj/*.tlpobj %{buildroot}%{_tlpkgobjdir}
