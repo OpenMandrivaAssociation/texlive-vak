@@ -52,3 +52,16 @@ requires a 8-bit BibTeX system.
 %install
 mkdir -p %{buildroot}%{_texmfdistdir}
 cp -fpar bibtex doc %{buildroot}%{_texmfdistdir}
+
+
+%changelog
+* Thu Jan 05 2012 Paulo Andrade <pcpa@mandriva.com.br> 20110704-2
++ Revision: 757336
+- Rebuild to reduce used resources
+
+* Sat Nov 05 2011 Paulo Andrade <pcpa@mandriva.com.br> 20110704-1
++ Revision: 719869
+- texlive-vak
+- texlive-vak
+- texlive-vak
+
