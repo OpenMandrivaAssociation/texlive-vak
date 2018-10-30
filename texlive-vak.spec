@@ -6,7 +6,7 @@
 # catalog-version undef
 Name:		texlive-vak
 Version:	20180303
-Release:	2
+Release:	3
 Summary:	BibTeX style for Russian Theses, books, etc
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/biblio/bibtex/contrib/vak
