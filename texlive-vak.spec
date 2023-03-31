@@ -1,6 +1,6 @@
 Name:		texlive-vak
 Version:	23431
-Release:	1
+Release:	2
 Summary:	BibTeX style for Russian Theses, books, etc
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/biblio/bibtex/contrib/vak
