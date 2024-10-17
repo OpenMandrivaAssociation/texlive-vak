@@ -3,7 +3,7 @@ Version:	23431
 Release:	2
 Summary:	BibTeX style for Russian Theses, books, etc
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/biblio/bibtex/contrib/vak
+URL:		https://www.ctan.org/tex-archive/biblio/bibtex/contrib/vak
 License:	LPPL
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/vak.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/vak.doc.r%{version}.tar.xz
